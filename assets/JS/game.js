@@ -1,1 +1,5 @@
-window.alert("This is an alert! Java Script is running!");
+function fight() {
+  window.alert("The Fight Has Begun!");
+}
+
+fight();
