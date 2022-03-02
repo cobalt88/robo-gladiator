@@ -20,9 +20,12 @@ if (promptFight === "fight" || promptFight === "FIGHT") {
     console.log(
       playerName + "attacked" +enemyName + ". " + enemyName + " now has " + enemyHealth + "health remaining."
     );
-} else {
-  window.alert("Invalid entry. Try again.")
-}
+} else  if(promptFight === "skip" || promptFight === "SKIP")
+var confirmSkip = window.prompt("Are you sure? Yes to continue, No to return to the fight!");
+
+//  else {
+//   window.alert("Invalid entry. Try again.")
+// }
 
 if (enemyHealth <= 0) {
   window.alert(enemyName + "Has DIED!");
