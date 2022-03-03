@@ -1,31 +1,45 @@
-window.alert("welcome to robot gladiators!");
 
-var playerName = window.prompt("What is your robots name?");
+
 var playerHealth = 100;
-var playerAttack = 10;
+var playerAttack = Math.floor(Math.random() * 10);
 
 console.log(playerName, playerAttack, playerHealth);
 
 // var enemyName = ["Roborto", "BuzzKill", "BoltCutter", "Lary"]
 var enemyName = "Roborto";
 var enemyHealth = 50;
-var enemyAttack = 12;
+var enemyAttack = Math.floor(Math.random() * 12);
 var playerMoney = 10;
+// do {fight} while (fight = true);
+
+window.alert("Welcome to Robot Gladiators!");
+
+var playerName = window.prompt("What is your robots name?");
+
+var promptFight = window.prompt('To fight or not to fight? What shall it be... Enter "FIGHT" or "SKIP" to continue.');
 
 var fight = function() {
 
-  var promptFight = window.prompt('To fight or not to fight? What shall it be... Enter "FIGHT" or "SKIP" to continue.')
+    if (promptFight === "fight" || promptFight === "FIGHT") {
+      console.log(enemyHealth = enemyHealth - playerAttack);
+      window.alert(playerName + "attacked" + enemyName + ". " + enemyName + " now has " + enemyHealth + "health remaining. Prepare to be attacked!");
 
-  if (promptFight === "fight" || promptFight === "FIGHT") {
-      enemyHealth = enemyHealth - playerAttack;
-      console.log(
-        playerName + "attacked" + enemyName + ". " + enemyName + " now has " + enemyHealth + "health remaining."
-      );
+      console.log(playerHealth = playerHealth - enemyAttack);
+      window.alert(enemyName + " has attacked your robot! " + playerName + " now has " + playerHealth + "remaining. Would you like to attack again?");
+      var promptContinue = window.prompt("Time For Round 2!, select OK to continue or CANCEL to exit.")
+
+        if(promptContinue = true) {
+          do {promptFight} while (playerHealth > 0 && enemyHealth > 0);
+        } else if(playerHealth <= 0) {
+          window.alert("Your robot has been destroyed!")
+        }
+
+
+
   } else  if(promptFight === "skip" || promptFight === "SKIP") {
   var confirmSkip = window.prompt("Are you sure? Yes to continue, No to return to the fight!");
-  } else {
-    window.alert("That is not an option.");
-  } 
+
+      if(confirmSkip === "yes" || confirmSkip === "YES")
 
   
 
@@ -50,6 +64,7 @@ var fight = function() {
   console.log(
     enemyName + " has attacked " + playerName + ". " + playerName + " has " + playerHealth + "HP remaining." 
   );
+  }
 
   if (playerHealth <= 0) {
     window.alert(playerName + "Has Died!")
